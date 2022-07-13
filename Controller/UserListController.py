@@ -1,4 +1,4 @@
-from ListApp.Model.UserList import UserList
+from ListsApp.Model.UserList import UserList
 
 class UserListControl:
     def create(name: str):

@@ -1,5 +1,5 @@
-from ListApp.Model.UserList import UserList
-from ListApp.Model.UserListItem import UserListItem
+from ListsApp.Model.UserList import UserList
+from ListsApp.Model.UserListItem import UserListItem
 
 class UserListItemManager:
     def add_item(item: UserListItem, user_list: UserList):

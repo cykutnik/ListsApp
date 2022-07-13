@@ -1,4 +1,4 @@
-from ListApp.Model.UserListItem import UserListItem
+from ListsApp.Model.UserListItem import UserListItem
 
 class UserListItemController:
     def create(name: str, price=0):
