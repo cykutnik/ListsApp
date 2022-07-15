@@ -1,7 +1,7 @@
-from ListsApp.Model.UserListItem import UserListItem
+from Model.UserListItem import UserListItem
 
 class UserListItemController:
-    def create(name: str, price=0):
+    def create(name: str, price):
         return UserListItem(name,price)
     def delete(item: UserListItem):
         del item

@@ -1,4 +1,4 @@
-from ListsApp.Model.UserList import UserList
+from Model.UserList import UserList
 from ListsApp.Model.UserListItem import UserListItem
 
 class UserListItemManager:
