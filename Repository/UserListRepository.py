@@ -1,4 +1,4 @@
-from UserList import UserList
+from Model.UserList import UserList
 
 class UserListRepository:
     repository={}
