@@ -3,3 +3,4 @@ class UserListItem:
         self.name=name
         self.price=price
         self.id=id(self)
+        self.list_id=None
