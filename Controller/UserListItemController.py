@@ -14,6 +14,3 @@ class UserListItemController:
         item.name=name
     def update_price(item: UserListItem, price):
         item.price=price
-        
-    #przy delete cos, zeby nie probowalo usunac nieistniejacego
-    #przedmiotu - w tej klasie czy w nowej?
