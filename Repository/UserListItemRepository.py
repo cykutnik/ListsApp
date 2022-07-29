@@ -1,4 +1,4 @@
-from Model.UserListItem import UserListItem
+from ListsApp.Model.UserListItem import UserListItem
 
 class UserListItemRepository:
     def __init__(self):

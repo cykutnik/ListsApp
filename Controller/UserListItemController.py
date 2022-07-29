@@ -1,5 +1,4 @@
-from Model.UserListItem import UserListItem
-from Repository.UserListItemRepository import UserListItemRepository
+from ListsApp.Repository.UserListItemRepository import UserListItemRepository
 
 class UserListItemController:
     def create(name: str, price, list_id, repo: UserListItemRepository):
