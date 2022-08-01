@@ -1,19 +1,22 @@
-from ListsApp.Repository.UserListRepository import UserListRepository
+from ListsApp.Manager.UserListDeleteManager import UserListDeleteManager
+from ListsApp.Manager.UserListCreateManager import UserListCreateManager
 from ListsApp.View.UserListView import UserListView
 
 class UserListController:
     def __init__(self):
-        self.repository = UserListRepository()
         self.view = UserListView()
     def create(self, name = None): 
         if(name):
-            self.repository.create(name)
+            UserListCreateManager(name)
         else:
             name = input('Podaj nazwę: ') #tu bedzie bralo z view
             self.create(name)
-    # def delete(user_list: UserList, repo: UserListRepository):
-    #     repo.remove(user_list)
-    #     del user_list
+    def delete(self, id = None):
+        if(id):
+            UserListDeleteManager(id)
+        else:
+            id = input('Podaj id: ') #zamienic w przyszlosci na view
+            self.delete(id)
     def show(self, id = None):
         if(id):
             user_list = self.repository.collection[id]
