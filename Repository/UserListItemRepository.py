@@ -7,5 +7,6 @@ class UserListItemRepository(metaclass = RepositoryMeta):
     def create(self, name, price):
         item = UserListItem(name, price)
         self.collection[item.id]=item
+        return item
     def delete(self, id):
         del self.collection[id]

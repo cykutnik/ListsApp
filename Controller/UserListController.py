@@ -19,7 +19,7 @@ class UserListController:
             self.delete(id)
     def show(self, id = None):
         if(id):
-            user_list = self.repository.collection[id] #??? jak sie teraz odnosic do list do view
+            user_list = self.repository.collection[id] #userlistshowmanager
             self.view.display([user_list])
         else:
             user_lists = self.repository.collection.values()
