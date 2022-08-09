@@ -1,9 +1,11 @@
 from ListsApp.Model.UserListItem import UserListItem
+from ListsApp.Repository.RepositoryMeta import RepositoryMeta
 
-class UserListItemRepository:
+class UserListItemRepository(metaclass = RepositoryMeta):
     def __init__(self):
-        self.repository={}
-    def add(self, item: UserListItem):
-        self.repository[item.id]=item
-    def remove(self, item: UserListItem):
-        del self.repository[item.id]
+        self.collection = {}
+    def create(self, name, price):
+        item = UserListItem(name, price)
+        self.collection[item.id]=item
+    def delete(self, id):
+        del self.collection[id]

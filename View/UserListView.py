@@ -1,5 +1,5 @@
 from ListsApp.Model.UserList import UserList
-#widok bioracy itemy
+from ListsApp.View.UserListItemView import UserListItemView
 
 class UserListView():
     def display(self, user_lists):
@@ -10,6 +10,6 @@ class UserListView():
         elif(len(user_lists)==1):
             print('{}: '.format(user_lists[0].name.upper()))
             for item in user_lists[0].items.values():
-                pass #tutaj ma byc wypisanie item osobnow
+                UserListItemView(item)
         else:
             pass #tutaj blad, bo nie mozna wypisac zawartosci listy o dlugosci 0

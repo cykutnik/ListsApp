@@ -1,6 +1,7 @@
 from ListsApp.Model.UserList import UserList
+from ListsApp.Repository.RepositoryMeta import RepositoryMeta
 
-class UserListRepository:
+class UserListRepository(metaclass = RepositoryMeta):
     def __init__(self):
         self.collection = {}
     def create(self, name):
