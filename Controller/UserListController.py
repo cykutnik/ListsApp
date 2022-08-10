@@ -1,5 +1,6 @@
 from ListsApp.Manager.UserListDeleteManager import UserListDeleteManager
 from ListsApp.Manager.UserListCreateManager import UserListCreateManager
+from ListsApp.Manager.UserListShowManager import UserListShowManager
 from ListsApp.View.UserListView import UserListView
 
 class UserListController:
@@ -19,9 +20,9 @@ class UserListController:
             self.delete(id)
     def show(self, id = None):
         if(id):
-            user_list = self.repository.collection[id] #userlistshowmanager
+            user_list = UserListShowManager(id)
             self.view.display([user_list])
         else:
-            user_lists = self.repository.collection.values()
+            user_lists = UserListShowManager()
             id = self.view.display(user_lists)
             self.show(id)

@@ -1,14 +1,22 @@
-from ListsApp.Repository.UserListItemRepository import UserListItemRepository
+from ListsApp.Manager.UserListItemCreateManager import UserListItemCreateManager
 
 class UserListItemController:
-    def create(name: str, price, list_id, repo: UserListItemRepository):
-        user_list_item=UserListItem(name,price)
-        repo.add(user_list_item)
-        user_list_item.list_id=list_id
-        return user_list_item
-    def delete(item: UserListItem, repo: UserListItemRepository):
-        repo.remove(item)
-        del item
+    def __init__(self):
+        pass #tu bedzie jakis view i te sprawy
+    def create(self, name = None, price = None, list_id = None):
+        if(name and price and list_id):
+            UserListItemCreateManager(name, price, list_id)
+        elif(name == None):
+            name = input("Podaj nazwę przedmiotu: ")
+            self.create(name, price, list_id)
+        elif(price == None):
+            price = input("Podaj cenę przedmiotu: ")
+            self.create(name, price, list_id)
+        else:
+            list_id = input("Podaj id listy: ")
+            self.create(name, price, list_id)
+    def delete(self, id):
+        pass
     def update_name(item: UserListItem, name):
         item.name=name
     def update_price(item: UserListItem, price):
