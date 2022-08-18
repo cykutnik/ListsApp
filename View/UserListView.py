@@ -1,4 +1,3 @@
-from ListsApp.Model.UserList import UserList
 from ListsApp.View.UserListItemView import UserListItemView
 
 class UserListView():

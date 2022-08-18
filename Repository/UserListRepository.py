@@ -1,9 +1,10 @@
 from ListsApp.Model.UserList import UserList
-from ListsApp.Repository.RepositoryMeta import RepositoryMeta
 
-class UserListRepository(metaclass = RepositoryMeta):
+class UserListRepository():
+    collection = {}
+    
     def __init__(self):
-        self.collection = {}
+        pass
     def create(self, name):
         user_list = UserList(name)
         self.collection[user_list.id] = user_list

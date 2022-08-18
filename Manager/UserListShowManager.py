@@ -1,9 +1,9 @@
 from ListsApp.Repository.UserListRepository import UserListRepository
 
 class UserListShowManager:
-    def __init__(self,id = None):
-        self.repository = UserListRepository()
+    def __init__(self, id = None):
+        repository = UserListRepository()
         if (id):
-            return self.repository.collection[id]
+            return repository.collection[id]
         else:
-            return self.repository.collection
+            return repository.collection.values
