@@ -16,13 +16,14 @@ class UserListController:
         if(id):
             UserListDeleteManager(id)
         else:
-            id = input('Podaj id: ') #zamienic w przyszlosci na view
+            id = int(input('Podaj id: ')) #zamienic w przyszlosci na view
             self.delete(id)
     def show(self, id = None):
         if(id):
             user_list = UserListShowManager(id)
-            self.view.display([user_list])
+            self.view.display(user_list)
         else:
             user_lists = UserListShowManager()
             id = self.view.display(user_lists)
-            self.show(id)
+            if(id):
+                self.show(id)

@@ -14,13 +14,13 @@ class UserListItemController:
             price = input("Podaj cenę przedmiotu: ") #zamiana na view
             self.create(name, price, list_id)
         else:
-            list_id = input("Podaj id listy: ") #zamiana na view
+            list_id = int(input("Podaj id listy: ")) #zamiana na view
             self.create(name, price, list_id)
     def delete(self, id = None):
         if(id):
             UserListItemDeleteManager(id)
         else:
-            id = input('Podaj id: ') #zamiana na view
+            id = int(input('Podaj id: ')) #zamiana na view
             self.delete(id)
     # def update_name(item: UserListItem, name):
     #     item.name=name
