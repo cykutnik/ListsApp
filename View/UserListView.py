@@ -9,7 +9,6 @@ class UserListView():
                 return int(input('Pokaż szczegóły dla listy numer: '))
             else:
                 print('Brak list do wyświetlenia')
-        else:
-            print('{}: '.format(user_lists.name.upper()))
-            for id in user_lists.items:
-                UserListItemView(id)
+                return None
+                
+        print('{}: '.format(user_lists.name.upper()))

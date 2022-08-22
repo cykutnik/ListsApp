@@ -1,7 +1,9 @@
 from ListsApp.Manager.UserListDeleteManager import UserListDeleteManager
 from ListsApp.Manager.UserListCreateManager import UserListCreateManager
 from ListsApp.Manager.UserListShowManager import UserListShowManager
+from ListsApp.Manager.UserListItemShowManager import UserListItemShowManager
 from ListsApp.View.UserListView import UserListView
+from ListsApp.View.UserListItemView import UserListItemView
 
 class UserListController:
     def __init__(self):
@@ -22,6 +24,8 @@ class UserListController:
         if(id):
             user_list = UserListShowManager(id)
             self.view.display(user_list)
+            items_list = UserListItemShowManager(user_list.items)
+            UserListItemView(items_list)
         else:
             user_lists = UserListShowManager()
             id = self.view.display(user_lists)

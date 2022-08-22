@@ -6,10 +6,9 @@ class UserListDeleteManager:
         list_repository = UserListRepository()
         item_repository = UserListItemRepository()
         count = len(list_repository.collection[id].items)
-        for item in item_repository.collection.values():
-            if item.list_id == id:
-                item_repository.delete(item.id) #czy manager ma tu korzystać z itemdeletemanager?
-                count = count - 1
+        for item_id in list_repository.collection[id].items:
+            item_repository.delete(item_id)
+            count = count - 1
             if count == 0:
                 break
         list_repository.delete(id)
