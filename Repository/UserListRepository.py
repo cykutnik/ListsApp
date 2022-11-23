@@ -11,3 +11,6 @@ class UserListRepository():
         return user_list
     def delete(self, id):
         del self.collection[id]
+    def get(self, id):
+        user_list = self.collection[id]
+        return [user_list.id, user_list.name]

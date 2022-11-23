@@ -11,3 +11,6 @@ class UserListItemRepository():
         return item
     def delete(self, id):
         del self.collection[id]
+    def get(self, id):
+        item = self.collection[id]
+        return [item.id, item.name, item.price, item.list_id]
